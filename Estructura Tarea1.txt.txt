@@ -1,0 +1,30 @@
+Estructura Tarea1
+
+Protocolo definido:
+CMD = 3 bits
+LNG = 5 bits
+DATA = 31 bytes max
+FCS = 9 bits 
+
+Programa emisor
+-Comando cerrar el programa receptor
+-Comando enviar mensaje de prueba // enviar el mensaje 10 veces
+-Comando enviar un mensaje de texto // debe ser guardado en un archivo mensajes.txt
+-Comando enviar mensaje con el nombre de un archivo de prueba en el receptor // ejemplo prueba1.txt 
+-menu de comandos 
+-Comando contador de mensajes enviados
+
+Programa receptor 
+-contador de mensajes
+mensajes recibidos correctamente
+mensajes recibidos con error detectado
+mensajes recibidos con error no detectado
+calcular % de acierto y error asociados a los mensajes enviados
+mostrar los % por consola
+-Al recibir el mensaje prueba1.txt(nombre de un archivo):
+caso1, si existe el archivo, mostrar por consola el contenido
+caso2, si no existe el archivo, informar por consola que el archivo no existe
+-comando para imprimir por pantalla contador de mensajes recibidos junto con sus estadisticas ( sin contar mensajes de prueba )
+-comando para listar los archivo de texto en la carpeta del receptor // puntaje extra 
+-registrar en un archivo mensajes recibidos con error // puntaje extra
+-comando para crear un nuevo archivo ( usuario le da el nombre ) y registrar el siguiente mensaje en ese archivo // puntaje extra    
