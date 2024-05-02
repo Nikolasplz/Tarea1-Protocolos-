@@ -8,17 +8,19 @@ void menuEmisor(){
 bool desempaquetar(Protocolo & proto, int tam){
   proto.CMD = proto.trama[0] & 0x07;
   proto.LNG = (proto.trama[0]>>3) & 0x1F;
-  proto.DATA = proto.trama[1]
+  memcpy(proto.DATA,&proto.trama[1],proto.LNG)
   int _fcs= fcs(proto.trama,proto.LNG;)
 }
   
 int empaquetar (Protocolo & proto){
                         // 3 bits                    5 bits
     proto.trama[0] = (proto.CMD & 0x07)| ((proto.LNG & 0x1F)<<3);
-        //destino, origen,tamaño 
-  memcpy(&trama[1], DATA, LNG); 
+        //destino,       origen,        tamaño 
+  memcpy(&proto.trama[1], proto.DATA, proto.LNG); 
   proto.FCS = fcs(proto.trama,proto.LNG+1) //Calculo del FCS
+  
 }
+  //FCS esta de tipo byte, y entrega tipo int, cambiar eso...
 
 int fcs(BYTE * arr,int tam){
     int sum_bits=0;
