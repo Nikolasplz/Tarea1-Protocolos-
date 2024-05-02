@@ -8,7 +8,7 @@ struct Protocolo{
     BYTE LNG; // 5 bits 
     BYTE DATA[LARGO_DATA]; // 31 bytes max
     BYTE FCS; // 9 bits
-    BYTE Frames[LARGO_DATA+2]; // encapsular trama 
+    BYTE Frames[LARGO_DATA+3]; // encapsular trama 
 };
 
 #endif
