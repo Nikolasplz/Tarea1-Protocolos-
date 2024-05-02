@@ -5,11 +5,17 @@
 #include <string.h>
 
 void menuEmisor(){
-
+bool desempaquetar(Protocolo & proto, int tam){
+  proto.CMD = proto.trama[0] & 0x07;
+  proto.LNG = (proto.trama[0]>>3) & 0x1F;
+  proto.DATA = proto.trama[1]
+}
+  
 int empaquetar (Protocolo & proto){
                         // 3 bits                    5 bits
     proto.trama[0] = (proto.CMD & 0x07)| ((proto.LNG & 0x1F)<<3);
-    memcpy(&trama[1], DATA, LNG); 
+        //destino, origen,tamaño 
+  memcpy(&trama[1], DATA, LNG); 
 }
 
 int fcs(BYTE * arr,int tam){
